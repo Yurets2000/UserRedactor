@@ -1,0 +1,11 @@
+<div>
+  <label for="user-name">User name: </label>
+  <input id="user-name" [(ngModel)]="currentUser.name" placeholder="name">
+  <button (click)="addUser(currentUser); currentUser = {name: ''}" >Add</button>
+  <button (click)="deleteUser()">Delete</button>
+</div>
+<ul *ngIf="users">
+  <li *ngFor="let user of users">
+    Name: <input [(ngModel)]="user.name">
+  </li>
+</ul>
